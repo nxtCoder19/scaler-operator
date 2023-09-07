@@ -1,0 +1,33 @@
+apiVersion: api.my.domain/v1alpha1
+kind: Demo
+metadata:
+  labels:
+    app.kubernetes.io/name: demo
+    app.kubernetes.io/instance: demo-sample
+    app.kubernetes.io/part-of: demo-operator-project
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: demo-operator-project
+  name: demo-sample
+spec:
+  # TODO(user): Add fields here
+  start: 5
+  end: 20
+  replicas: 5
+  deployments:
+    - name: nginx
+      namespace: default
+
+#---
+#
+#apiVersion: api.my.domain/v1alpha1
+#kind: Demo
+#metadata:
+#  name: demo-sample1
+#spec:
+#  # TODO(user): Add fields here
+#  start: 21
+#  end: 4
+#  replicas: 2
+#  deployments:
+#    - name: nginx
+#      namespace: default
